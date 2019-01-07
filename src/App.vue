@@ -135,9 +135,9 @@
           label="Slažete li se?"
           required
         ></v-checkbox>
-        </v-form>
+      </v-form>
 
-        <v-form ref="form" v-model="valid" lazy-validation v-if="page===2">
+      <v-form ref="form" v-model="valid" lazy-validation v-if="page===2">
         <h1 style="text-align:center;">SAMO ZA OBRTE</h1>
         <v-text-field
           v-model="vlasnikObrtaImePrezime"
@@ -231,13 +231,7 @@
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===5">
         <h1 style="text-align:center;">2. PODACI O KONTAKT OSOBI</h1>
-        <v-text-field
-          v-model="kontaktIme"
-          :counter="255"
-          label="Ime"
-          required
-          class="text_field"
-        ></v-text-field>
+        <v-text-field v-model="kontaktIme" :counter="255" label="Ime" required class="text_field"></v-text-field>
         <v-text-field
           v-model="kontaktPrezime"
           :counter="255"
@@ -271,11 +265,12 @@
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===6">
         <h1 style="text-align:center;">3. PODACI O VLASNICIMA/SUVLASNICIMA PLOVILA</h1>
-        <h2 style="text-align:center;">(ispunjava se isključivo ako se operacija odnosi na fizičko ulaganje u plovilo
-           i to u slučajevima kada Zahtjev za potporu podnosi vlasnik plovila, a nije jedini vlasnik te kada Zahtjev za 
-           potporu podnosi ovlaštenik povlastice, a koji nije ujedno i vlasnik ribarskog plovila. Ako su operacijom obuhvaćena 
-           fizička ulaganja u više ribarskih plovila, po potrebi dodati nove retke i navesti podatke za svako plovilo u slučaju više
-           vlasnika/različitog vlasnika od ovlaštenika)
+        <h2 style="text-align:center;">
+          (ispunjava se isključivo ako se operacija odnosi na fizičko ulaganje u plovilo
+          i to u slučajevima kada Zahtjev za potporu podnosi vlasnik plovila, a nije jedini vlasnik te kada Zahtjev za
+          potporu podnosi ovlaštenik povlastice, a koji nije ujedno i vlasnik ribarskog plovila. Ako su operacijom obuhvaćena
+          fizička ulaganja u više ribarskih plovila, po potrebi dodati nove retke i navesti podatke za svako plovilo u slučaju više
+          vlasnika/različitog vlasnika od ovlaštenika)
         </h2>
         <h2 class="subtitle">3.1.1. Gospodarski ribolov na moru</h2>
         <h3 class="subtext">Plovilo broj 1</h3>
@@ -323,11 +318,16 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headersPlovilo" :items="plovilo" class="elevation-1" rows-per-page-text="redaka po stranici">
+          <v-data-table
+            :headers="headersPlovilo"
+            :items="plovilo"
+            class="elevation-1"
+            rows-per-page-text="redaka po stranici"
+          >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-left" >{{ props.item.rbr }}</td>
+              <td class="text-xs-left">{{ props.item.rbr }}</td>
               <td class="text-xs-left">{{ props.item.imePrezime }}</td>
-              <td class="text-xs-left" >{{ props.item.oib }}</td>
+              <td class="text-xs-left">{{ props.item.oib }}</td>
               <td class="justify-center layout px-0">
                 <v-icon small class="mr-2" @click="editItemPlovilo(props.item)">edit</v-icon>
                 <v-icon small @click="deleteItemPlovilo(props.item)">delete</v-icon>
@@ -339,7 +339,6 @@
           </v-data-table>
         </div>
       </v-form>
-
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===7">
         <h2 class="subtitle">3.1.1. Gospodarski ribolov na moru</h2>
@@ -387,11 +386,16 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headersPlovilo" :items="plovilo" class="elevation-1" rows-per-page-text="redaka po stranici">
+          <v-data-table
+            :headers="headersPlovilo"
+            :items="plovilo"
+            class="elevation-1"
+            rows-per-page-text="redaka po stranici"
+          >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-left" >{{ props.item.rbr }}</td>
+              <td class="text-xs-left">{{ props.item.rbr }}</td>
               <td class="text-xs-left">{{ props.item.imePrezime }}</td>
-              <td class="text-xs-left" >{{ props.item.oib }}</td>
+              <td class="text-xs-left">{{ props.item.oib }}</td>
               <td class="justify-center layout px-0">
                 <v-icon small class="mr-2" @click="editItemPlovilo(props.item)">edit</v-icon>
                 <v-icon small @click="deleteItemPlovilo(props.item)">delete</v-icon>
@@ -450,11 +454,16 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headersPlovilo" :items="plovilo" class="elevation-1" rows-per-page-text="redaka po stranici">
+          <v-data-table
+            :headers="headersPlovilo"
+            :items="plovilo"
+            class="elevation-1"
+            rows-per-page-text="redaka po stranici"
+          >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-left" >{{ props.item.rbr }}</td>
+              <td class="text-xs-left">{{ props.item.rbr }}</td>
               <td class="text-xs-left">{{ props.item.imePrezime }}</td>
-              <td class="text-xs-left" >{{ props.item.oib }}</td>
+              <td class="text-xs-left">{{ props.item.oib }}</td>
               <td class="justify-center layout px-0">
                 <v-icon small class="mr-2" @click="editItemPlovilo(props.item)">edit</v-icon>
                 <v-icon small @click="deleteItemPlovilo(props.item)">delete</v-icon>
@@ -513,11 +522,16 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headersPlovilo" :items="plovilo" class="elevation-1" rows-per-page-text="redaka po stranici">
+          <v-data-table
+            :headers="headersPlovilo"
+            :items="plovilo"
+            class="elevation-1"
+            rows-per-page-text="redaka po stranici"
+          >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-left" >{{ props.item.rbr }}</td>
+              <td class="text-xs-left">{{ props.item.rbr }}</td>
               <td class="text-xs-left">{{ props.item.imePrezime }}</td>
-              <td class="text-xs-left" >{{ props.item.oib }}</td>
+              <td class="text-xs-left">{{ props.item.oib }}</td>
               <td class="justify-center layout px-0">
                 <v-icon small class="mr-2" @click="editItemPlovilo(props.item)">edit</v-icon>
                 <v-icon small @click="deleteItemPlovilo(props.item)">delete</v-icon>
@@ -562,8 +576,15 @@
         <hr>
         <br>
         <br>
-        <v-radio-group v-model="operacijaObuhvaca" label="5.1 Operacija obuhvaća inovaciju koja se odnosi na:">
-          <v-radio :key="gospodarskiRibolovNaMoru" :label="'Gospodarski ribolov na moru/preradu proizvoda gospodarskog ribolova na moru'" :value="0"></v-radio>
+        <v-radio-group
+          v-model="operacijaObuhvaca"
+          label="5.1 Operacija obuhvaća inovaciju koja se odnosi na:"
+        >
+          <v-radio
+            :key="gospodarskiRibolovNaMoru"
+            :label="'Gospodarski ribolov na moru/preradu proizvoda gospodarskog ribolova na moru'"
+            :value="0"
+          ></v-radio>
           <v-radio
             :key="gospodarskiRibolovNaSlatkimVodama"
             :label="'Gospodarski ribolov na slatkim vodama/preradu proizvoda gospodarskog ribolova na slatkim vodama'"
@@ -574,89 +595,60 @@
 
         <hr>
 
-        <h4 class="checkbox-text">5.2. Inovacija se odnosi na (naznačiti odgovarajuće i opisati aktivnost/i):</h4>
-        
-        <v-checkbox 
-        v-model="opcije"
-        label=" a) Nove ili poboljšane metode i tehnike"
-        :value="1">
-        </v-checkbox>
+        <h4
+          class="checkbox-text"
+        >5.2. Inovacija se odnosi na (naznačiti odgovarajuće i opisati aktivnost/i):</h4>
 
-        <v-checkbox v-model="opcije"
-        label=" b) Nove ili značajno poboljšana oprema"
-        :value="2">
-        </v-checkbox>
+        <v-checkbox v-model="opcije" label=" a) Nove ili poboljšane metode i tehnike" :value="1"></v-checkbox>
 
-        <v-checkbox v-model="opcije"
-        label=" c) Nove ili značajno poboljšani proizvodi"
-        :value="3">
-        </v-checkbox>
+        <v-checkbox v-model="opcije" label=" b) Nove ili značajno poboljšana oprema" :value="2"></v-checkbox>
 
-        <v-checkbox v-model="opcije"
-        label="d) Novi ili poboljšani sustavi upravljanja i organizacije"
-        :value="4">
-        </v-checkbox>
+        <v-checkbox v-model="opcije" label=" c) Nove ili značajno poboljšani proizvodi" :value="3"></v-checkbox>
 
-        <v-textarea
-            id="textAreaOne"
-            name="opis"
-            label="Opis a:"
-            hint="Opišite"
-          ></v-textarea>
-          <v-textarea
-            name="opis"
-            label="Opis b:"
-            hint="Opišite"
-          ></v-textarea>
-          <v-textarea
-            name="opis"
-            label="Opis c:"
-            hint="Opišite"
-          ></v-textarea>
-          <v-textarea
-            name="opis"
-            label="Opis d:"
-            hint="Opišite"
-          ></v-textarea>
-  
+        <v-checkbox
+          v-model="opcije"
+          label="d) Novi ili poboljšani sustavi upravljanja i organizacije"
+          :value="4"
+        ></v-checkbox>
+
+        <v-textarea id="textAreaOne" name="opis" label="Opis a:" hint="Opišite"></v-textarea>
+        <v-textarea name="opis" label="Opis b:" hint="Opišite"></v-textarea>
+        <v-textarea name="opis" label="Opis c:" hint="Opišite"></v-textarea>
+        <v-textarea name="opis" label="Opis d:" hint="Opišite"></v-textarea>
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===12">
-        <h2 class="subtitle">5.3 Operacija obuhvaća ribarska plovila 
-        (ako operacija obuhvaća ribarska plovila, navesti podatke za sva plovila koja su obuhvaćena/sudjeluju u provedbi operacije):</h2>
+        <h2 class="subtitle">
+          5.3 Operacija obuhvaća ribarska plovila
+          (ako operacija obuhvaća ribarska plovila, navesti podatke za sva plovila koja su obuhvaćena/sudjeluju u provedbi operacije):
+        </h2>
         <br>
 
         <h4 style="text-align:center;">5.3.1. Gospodarski ribolov na moru</h4>
 
+        <v-text-field v-model="rBr" :counter="255" label="Rbr" required class="text_field"></v-text-field>
         <v-text-field
-          v-model="rBr"
-          :counter="255"
-          label="Rbr"
-          required
-          class="text_field"
-        ></v-text-field>
-         <v-text-field
           v-model="cfrBrojPlovila"
           :counter="255"
           label="CFR broj plovila"
           required
           class="text_field"
         ></v-text-field>
-         <v-text-field
+        <v-text-field
           v-model="serijskiBrojPovlastice"
           :counter="255"
           label="Serijski broj povlastice"
           required
           class="text_field"
         ></v-text-field>
-         <v-text-field
+        <v-text-field
           v-model="vlasnikPovlasticePlovila"
           :counter="255"
           label="Vlasnik povlastice/plovila"
           required
           class="text_field"
         ></v-text-field>
-         <v-text-field
+        <v-text-field
           v-model="ovlastenikPovlastice"
           :counter="255"
           label="Ovlaštenik povlastice"
@@ -671,37 +663,38 @@
 
         <h2 class="subtitle">6.1. Tip operacije</h2>
         <br>
-        <h4 style="text-align:center">Bodovi se na temelju ovoga kriterija dodjeljuju ovisno o tipu operacije koja je predmet potpore.</h4>
+        <h4
+          style="text-align:center"
+        >Bodovi se na temelju ovoga kriterija dodjeljuju ovisno o tipu operacije koja je predmet potpore.</h4>
         <br>
         <br>
         <br>
         <br>
         <br>
 
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.1.1. Razvoj i/ili uvođenje metoda i tehnika za poboljšanje selektivnosti ribolovnih alata 
+        <v-checkbox
+          v-model="bodovi"
+          label="6.1.1. Razvoj i/ili uvođenje metoda i tehnika za poboljšanje selektivnosti ribolovnih alata 
         i/ili smanjenje neželjenog ulova i/ili odbačenog ulova i/ili negativnog utjecaja na okoliš (8 bodova)"
-        :value="1">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.1.2 Razvoj i/ili uvođenje nove ili značajno poboljšane opreme (6 bodova)"
-        :value="2">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.1.3 Razvoj i/ili uvođenje novih ili značajno poboljšanih proizvoda (4 boda)"
-        :value="3">
-        </v-checkbox>
+          :value="1"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="6.1.2 Razvoj i/ili uvođenje nove ili značajno poboljšane opreme (6 bodova)"
+          :value="2"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="6.1.3 Razvoj i/ili uvođenje novih ili značajno poboljšanih proizvoda (4 boda)"
+          :value="3"
+        ></v-checkbox>
 
         <v-text-field
-              class="kriterij-box"
-              label="UKUPNO kriterij 6.1."
-              placeholder="0"
-              readonly="true"
+          class="kriterij-box"
+          label="UKUPNO kriterij 6.1."
+          placeholder="0"
+          readonly="true"
         ></v-text-field>
-
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===15">
@@ -710,9 +703,10 @@
 
         <h2 class="subtitle">6.3. Korisnik</h2>
         <br>
-        <h4 style="text-align:center">Bodovi se na temelju ovoga kriterija dodjeljuju prema tipu korisnika, tj. 
-          ako Zahtjev za potporu za zajedničku operaciju podnosi zajednički korisnik, tj. organizacija/udruženje 
-          ribara ili javno tijelo utemeljeno zakonom koje predstavlja ribare ili ako je korisnik vlasnik i/ili ovlaštenik 
+        <h4 style="text-align:center">
+          Bodovi se na temelju ovoga kriterija dodjeljuju prema tipu korisnika, tj.
+          ako Zahtjev za potporu za zajedničku operaciju podnosi zajednički korisnik, tj. organizacija/udruženje
+          ribara ili javno tijelo utemeljeno zakonom koje predstavlja ribare ili ako je korisnik vlasnik i/ili ovlaštenik
           povlastice za gospodarski ribolov na moru, a koja je izdana za ribarsko plovilo koje obavlja ribolov u segmentu malog
           priobalnog ribolova. Mali priobalni ribolov podrazumijeva ribolov koji obavljaju ribarska plovila čija ukupna duljina
           ne prelazi 12 metara i koja ne koriste vučnu ribolovnu opremu iz popisa u tablici 3. Priloga I. Uredbe Komisije (EZ) br.
@@ -724,78 +718,68 @@
         <br>
         <br>
 
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.3.1 Zajednički korisnik (4 boda)"
-        :value="1">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.3.2 Mali priobalni ribolov (2 boda)"
-        :value="2">
-        </v-checkbox>
+        <v-checkbox v-model="bodovi" label="6.3.1 Zajednički korisnik (4 boda)" :value="1"></v-checkbox>
+        <v-checkbox v-model="bodovi" label="6.3.2 Mali priobalni ribolov (2 boda)" :value="2"></v-checkbox>
 
         <v-text-field
-              class="kriterij-box"
-              label="UKUPNO kriterij 6.3."
-              placeholder="0"
-              readonly="true"
+          class="kriterij-box"
+          label="UKUPNO kriterij 6.3."
+          placeholder="0"
+          readonly="true"
         ></v-text-field>
-        <v-text-field
-              class="kriterij-box bold"
-              label="SVEUKUPNO"
-              placeholder="0"
-              readonly="true"
-        ></v-text-field>
+        <v-text-field class="kriterij-box bold" label="SVEUKUPNO" placeholder="0" readonly="true"></v-text-field>
       </v-form>
 
-       <v-form ref="form" v-model="valid" lazy-validation v-if="page===14">
-        <h2 class="subtitle">6.2. Povećanje vrijednosti proizvodnje uz održavanje ili smanjenje količine</h2>
+      <v-form ref="form" v-model="valid" lazy-validation v-if="page===14">
+        <h2
+          class="subtitle"
+        >6.2. Povećanje vrijednosti proizvodnje uz održavanje ili smanjenje količine</h2>
         <br>
-        <h4>Bodovi se na temelju ovoga kriterija dodjeljuju za operacije koje će rezultirati povećanje vrijednosti proizvodnje, ali isključivo uz održavanje ili smanjenje količine proizvodnje. Za povećanje vrijednosti uz povećanje količine proizvodnje se ne dodjeljuju bodovi na temelju ovoga kriterija.
-           Vrijednošću proizvodnje se smatra vrijednost prodane količine na godišnjoj razini (u kunama), a količinom proizvodnje se smatra prodana količina na godišnjoj razini (u tonama ili kilogramima).
-           Povećanje vrijednosti se računa na način da se uspoređuje planirana vrijednost proizvodnje, uz održavanje ili smanjenje količine proizvodnje, iz reprezentativne godine s prosječnom ostvarenom vrijednosti proizvodnje kroz razdoblje od zadnje tri godine koje prethode podnošenju Zahtjeva za potporu. Kod izračuna prosječne ostvarene količine i vrijednosti proizvodnje u razdoblju od zadnje tri godine koje prethode podnošenju Zahtjeva za potporu, uzimaju se u obzir one godine u kojima je proizvodnja ostvarena.
-           Reprezentativnu godinu određuje korisnik, a podrazumijeva godinu u kojoj se očekuje da će doći do povećanja vrijednosti proizvodnje, uz održavanje ili smanjenje količine kao rezultat inovacije koja je predmet potpore.
+        <h4>
+          Bodovi se na temelju ovoga kriterija dodjeljuju za operacije koje će rezultirati povećanje vrijednosti proizvodnje, ali isključivo uz održavanje ili smanjenje količine proizvodnje. Za povećanje vrijednosti uz povećanje količine proizvodnje se ne dodjeljuju bodovi na temelju ovoga kriterija.
+          Vrijednošću proizvodnje se smatra vrijednost prodane količine na godišnjoj razini (u kunama), a količinom proizvodnje se smatra prodana količina na godišnjoj razini (u tonama ili kilogramima).
+          Povećanje vrijednosti se računa na način da se uspoređuje planirana vrijednost proizvodnje, uz održavanje ili smanjenje količine proizvodnje, iz reprezentativne godine s prosječnom ostvarenom vrijednosti proizvodnje kroz razdoblje od zadnje tri godine koje prethode podnošenju Zahtjeva za potporu. Kod izračuna prosječne ostvarene količine i vrijednosti proizvodnje u razdoblju od zadnje tri godine koje prethode podnošenju Zahtjeva za potporu, uzimaju se u obzir one godine u kojima je proizvodnja ostvarena.
+          Reprezentativnu godinu određuje korisnik, a podrazumijeva godinu u kojoj se očekuje da će doći do povećanja vrijednosti proizvodnje, uz održavanje ili smanjenje količine kao rezultat inovacije koja je predmet potpore.
         </h4>
         <br>
         <p>
           <span style="font-weight:600">NAPOMENA:</span> Uneseni podaci moraju biti realni, a njihovo ostvarenje biti će pod posebnim nadzorom za vrijeme trajanja praćenja operacije od strane nadležnih institucija, tj. Upravljačko tijelo će provjeriti postizanje povećanja u reprezentativnoj godini koju je odredio korisnik i to uvidom u prodajne listove odnosno uvidom u ostvarenu vrijednost i količinu proizvodnje u reprezentativnoj godini u odnosu na prosječnu ostvarenu količinu i vrijednost proizvodnje u razdoblju od zadnje tri godine koje prethode podnošenju Zahtjeva za potporu.
         </p>
-        <v-text-field class="custom-box-godina"
-              label="Reprezentativna godina:"
-              hint="Unesite godinu"
+        <v-text-field
+          class="custom-box-godina"
+          label="Reprezentativna godina:"
+          hint="Unesite godinu"
         ></v-text-field>
         <br>
         <hr>
         <br>
 
-         <v-checkbox 
-        v-model="bodovi"
-        label="6.2.1. Povećanje vrijednosti proizvodnje, uz održavanje ili smanjenje količine proizvodnje, za>10% u
+        <v-checkbox
+          v-model="bodovi"
+          label="6.2.1. Povećanje vrijednosti proizvodnje, uz održavanje ili smanjenje količine proizvodnje, za>10% u
          odnosu na prosječno ostvarenu proizvodnju kroz razdoblje od zadnjetri godine koje prethode podnošenju Zahtjeva za potporu (3 boda)"
-        :value="1">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.2.2. Povećanje vrijednosti proizvodnje uz održavanje ili smanjenje količine proizvodnje za ≥5% ≤ 10% u odnosu na prosječno
+          :value="1"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="6.2.2. Povećanje vrijednosti proizvodnje uz održavanje ili smanjenje količine proizvodnje za ≥5% ≤ 10% u odnosu na prosječno
          ostvarenu proizvodnju kroz razdoblje od zadnjetri godine koje prethode podnošenju Zahtjeva za potporu (2 boda)"
-        :value="2">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="6.2.3. Povećanje vrijednosti proizvodnje za < 5% u odnosu na prosječno ostvarenu proizvodnju kroz razdoblje od zadnje tri 
+          :value="2"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="6.2.3. Povećanje vrijednosti proizvodnje za < 5% u odnosu na prosječno ostvarenu proizvodnju kroz razdoblje od zadnje tri 
         godine koje prethode podnošenju Zahtjeva za potporu (1 bod)"
-        :value="3">
-        </v-checkbox>
+          :value="3"
+        ></v-checkbox>
 
         <v-text-field
-              class="kriterij-box"
-              label="UKUPNO kriterij 6.2."
-              placeholder="0"
-              readonly="true"
+          class="kriterij-box"
+          label="UKUPNO kriterij 6.2."
+          placeholder="0"
+          readonly="true"
         ></v-text-field>
-
-       </v-form>
+      </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===16">
         <h1 style="text-align:center;">7. LISTA PRIHVATLJIVIH TROŠKOVA U OKVIRU OPERACIJE</h1>
@@ -827,10 +811,20 @@
                         <v-text-field v-model="editedItem.dobavljac" label="Dobavljač"></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm6 md4>
-                        <v-text-field class="inputPrice" type="number" v-model="editedItem.iznos" label="Iznos bez PDV-a"></v-text-field>
+                        <v-text-field
+                          class="inputPrice"
+                          type="number"
+                          v-model="editedItem.iznos"
+                          label="Iznos bez PDV-a"
+                        ></v-text-field>
                       </v-flex>
                       <v-flex xs12 sm6 md4>
-                        <v-text-field class="inputPrice" type="number" v-model="editedItem.pdv" label="PDV"></v-text-field>
+                        <v-text-field
+                          class="inputPrice"
+                          type="number"
+                          v-model="editedItem.pdv"
+                          label="PDV"
+                        ></v-text-field>
                       </v-flex>
                     </v-layout>
                   </v-container>
@@ -844,12 +838,17 @@
               </v-card>
             </v-dialog>
           </v-toolbar>
-          <v-data-table :headers="headers" :items="troskovi" class="elevation-1" rows-per-page-text="redaka po stranici">
+          <v-data-table
+            :headers="headers"
+            :items="troskovi"
+            class="elevation-1"
+            rows-per-page-text="redaka po stranici"
+          >
             <template slot="items" slot-scope="props">
-              <td class="text-xs-left" >{{ props.item.rbr }}</td>
+              <td class="text-xs-left">{{ props.item.rbr }}</td>
               <td class="text-xs-left">{{ props.item.nazivTroska }}</td>
-              <td class="text-xs-left" >{{ props.item.dobavljac }}</td>
-              <td class="text-xs-left" >{{ props.item.brojDokumenta }}</td>
+              <td class="text-xs-left">{{ props.item.dobavljac }}</td>
+              <td class="text-xs-left">{{ props.item.brojDokumenta }}</td>
               <td class="text-xs-right">{{ formatMoney(props.item.iznos) }}</td>
               <td class="text-xs-right">{{ formatMoney(props.item.pdv) }}</td>
               <td class="text-xs-right">{{ formatMoney(props.item.ukupno) }}</td>
@@ -872,9 +871,12 @@
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===17">
-        <h1 class="subtitle upper" style="text-align:center;">8. Rekapitulacija troškova i izračun javne potpore</h1>
+        <h1
+          class="subtitle upper"
+          style="text-align:center;"
+        >8. Rekapitulacija troškova i izračun javne potpore</h1>
 
-         <v-text-field
+        <v-text-field
           v-model="ukupniIznosPrihvatljivihTroskova"
           label="A. Ukupni iznos prihvatljivih troškova"
           class="text_field"
@@ -899,31 +901,31 @@
         <hr>
         <br>
 
-        <v-checkbox 
-        v-model="bodovi"
-        label="Operacija je vezana uz mali priobalni ribolov. ( + 30 postotnih bodova)" 
-        :value="1">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="Operacija se provodi otocima Dugi otok, Vis, Mljet i Lastovo. ( + 35 postotnih bodova)" 
-        :value="2">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="Operaciju provodi ribarska zadruga. ( + 10 postotnih bodova)" 
-        :value="3">
-        </v-checkbox>
-        <v-checkbox 
-        v-model="bodovi"
-        label="Operaciju provodi organizacija proizvođača, udruženje organizacija proizvođača ili međusektorska organizacija. ( + 25 postotnih bodova)" 
-        :value="4">
-        </v-checkbox>
-         <v-checkbox 
-        v-model="bodovi"
-        label="Operaciju provodi poduzeće koje nije obuhvaćeno definicijom malih i srednjih poduzeća. ( - 20 postotnih bodova)" 
-        :value="5">
-        </v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="Operacija je vezana uz mali priobalni ribolov. ( + 30 postotnih bodova)"
+          :value="1"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="Operacija se provodi otocima Dugi otok, Vis, Mljet i Lastovo. ( + 35 postotnih bodova)"
+          :value="2"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="Operaciju provodi ribarska zadruga. ( + 10 postotnih bodova)"
+          :value="3"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="Operaciju provodi organizacija proizvođača, udruženje organizacija proizvođača ili međusektorska organizacija. ( + 25 postotnih bodova)"
+          :value="4"
+        ></v-checkbox>
+        <v-checkbox
+          v-model="bodovi"
+          label="Operaciju provodi poduzeće koje nije obuhvaćeno definicijom malih i srednjih poduzeća. ( - 20 postotnih bodova)"
+          :value="5"
+        ></v-checkbox>
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===18">
@@ -942,27 +944,30 @@
           placeholder="0"
         ></v-text-field>
         <p>
-          *   Ako je PDV prihvatljiv trošak, upisuje se ukupni iznos troškova (iznos „UKUPNO“ stupca G iz tablice 7.)
+          * Ako je PDV prihvatljiv trošak, upisuje se ukupni iznos troškova (iznos „UKUPNO“ stupca G iz tablice 7.)
           ** Primjena dodatnih povećanja sukladno Provedbenoj Uredbi Komisije (EU) br. 772/2014:
-          -  ako je na istu operaciju primjenjivo više povećanja postotnih bodova, primjenjuje se samo najveće povećanje
-          -  ako je na istu operaciju primjenjivo više smanjenja postotnih bodova, primjenjuje se samo najveće smanjenje
-          -  ako je na operaciju primjenjivo jedno dodatno povećanje postotnih bodova ili više njih i istodobno jedno dodatno 
-            smanjenje postotnih bodova ili više njih, primjenjuje se samo najveće smanjenje
-          *** Mali priobalni ribolov podrazumijeva ribolov kojeg obavljaju ribarska plovila čija ukupna duljina ne prelazi 12 metara i koja u povlastici izdanoj za ta plovila nemaju upisane povlačne ribolovne alate iz popisa u tablici 3. Priloga I. Uredbi Komisije (EZ) br. 26/2004 od 30. prosinca 2003. o registru ribarske flote Zajednice (SL L5, 09.01.2004.) te njene izmjene, tj. Provedbene uredbe Komisije (EU) br. 
+          - ako je na istu operaciju primjenjivo više povećanja postotnih bodova, primjenjuje se samo najveće povećanje
+          - ako je na istu operaciju primjenjivo više smanjenja postotnih bodova, primjenjuje se samo najveće smanjenje
+          - ako je na operaciju primjenjivo jedno dodatno povećanje postotnih bodova ili više njih i istodobno jedno dodatno
+          smanjenje postotnih bodova ili više njih, primjenjuje se samo najveće smanjenje
+          *** Mali priobalni ribolov podrazumijeva ribolov kojeg obavljaju ribarska plovila čija ukupna duljina ne prelazi 12 metara i koja u povlastici izdanoj za ta plovila nemaju upisane povlačne ribolovne alate iz popisa u tablici 3. Priloga I. Uredbi Komisije (EZ) br. 26/2004 od 30. prosinca 2003. o registru ribarske flote Zajednice (SL L5, 09.01.2004.) te njene izmjene, tj. Provedbene uredbe Komisije (EU) br.
           741/2014 оd 8. srpnja 2014. o izmjeni Uredbe (EZ) br. 26/2004 o registru ribarske flote Zajednice (SL L200, 09.07.2014.)
-       </p>
+        </p>
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===19">
-        <h1 class="subtitle upper" style="text-align:center;">9. Okvirni rezultati koje očekuje korisnik</h1>
+        <h1
+          class="subtitle upper"
+          style="text-align:center;"
+        >9. Okvirni rezultati koje očekuje korisnik</h1>
 
         <p>
-          <span class="bold">NAPOMENA:</span> Podaci koje korisnik dostavlja u okviru ove tablice se ne koriste u svrhu utvrđivanja 
+          <span class="bold">NAPOMENA:</span> Podaci koje korisnik dostavlja u okviru ove tablice se ne koriste u svrhu utvrđivanja
           udovoljavanja uvjetima i kriterijima za dodjelu potpore niti u svrhu dodjele bodova na temelju kriterija
           za odabir već se koriste isključivo za potrebe praćenja rezultata i provedbe operacije. Međutim, savjetuje
-          se korisniku da kod procjene okvirnih rezultata planira u najvećoj mogućoj mjeri realno i objektivno s obzirom 
-          da će Upravljačko tijelo rezultate operacija, prema pokazateljima iz ovih tablica, mjeriti nakon što isti budu 
-          stvarno nastali. U tu svrhu, korisnik je dužan Upravljačkom tijelu dostaviti podatke i odgovarajuću dokumentaciju 
+          se korisniku da kod procjene okvirnih rezultata planira u najvećoj mogućoj mjeri realno i objektivno s obzirom
+          da će Upravljačko tijelo rezultate operacija, prema pokazateljima iz ovih tablica, mjeriti nakon što isti budu
+          stvarno nastali. U tu svrhu, korisnik je dužan Upravljačkom tijelu dostaviti podatke i odgovarajuću dokumentaciju
           vezano uz pokazatelje rezultata nakon što iste bude moguće mjeriti uzimajući u obzir referentnu godinu.
         </p>
         <p>
@@ -973,16 +978,16 @@
           <span class="underline-bold">Prethodna godina</span> - podrazumijeva kalendarsku godinu koja prethodi godini podnošenja zahtjeva za potporu.
         </p>
         <p>
-          <span class="underline-bold">Reprezentativna godina</span> - godina koju  odabire korisnik, a podrazumijeva godinu u kojoj dolazi do potpunog iskorištavanja 
-          poslovnog kapaciteta operacije, tj. godina u kojoj će prema procjeni korisnika biti vidljiv utjecaj operacije na količinu 
+          <span class="underline-bold">Reprezentativna godina</span> - godina koju odabire korisnik, a podrazumijeva godinu u kojoj dolazi do potpunog iskorištavanja
+          poslovnog kapaciteta operacije, tj. godina u kojoj će prema procjeni korisnika biti vidljiv utjecaj operacije na količinu
           i/ili vrijednost proizvodnje i/ili neto dobit, tj. da će rezultati prema pokazateljima biti mjerljivi. Reprezentativna godina
-           mora biti unutar razdoblja od pet godina nakon konačne isplate financijskih sredstava potpore korisniku.
+          mora biti unutar razdoblja od pet godina nakon konačne isplate financijskih sredstava potpore korisniku.
         </p>
         <p>
-          <span class="underline-bold">Planirana promjena</span> – razlika između reprezentativne i prethodne godine, 
-          koja može biti pozitivna ili negativna, a u pojedinim slučajevima ista ne mora ni nastati, tj. operacija ne mora nužno 
-          rezultirati promjenom u količini/vrijednosti/neto dobiti. Ako je planirana količina/vrijednost u reprezentativnoj godini veća od količine/vrijednosti/neto dobiti u prethodnoj godini, promjena 
-          je pozitivna i podrazumijeva povećanje količine/vrijednosti/neto dobiti. U ovom slučaju je vrijednost promjene potrebno označiti 
+          <span class="underline-bold">Planirana promjena</span> – razlika između reprezentativne i prethodne godine,
+          koja može biti pozitivna ili negativna, a u pojedinim slučajevima ista ne mora ni nastati, tj. operacija ne mora nužno
+          rezultirati promjenom u količini/vrijednosti/neto dobiti. Ako je planirana količina/vrijednost u reprezentativnoj godini veća od količine/vrijednosti/neto dobiti u prethodnoj godini, promjena
+          je pozitivna i podrazumijeva povećanje količine/vrijednosti/neto dobiti. U ovom slučaju je vrijednost promjene potrebno označiti
           znakom plus „+“. Ako je manja u reprezentativnoj godini, tada je promjena negativna, tj. podrazumijeva smanjenje količine/vrijednosti/neto
           dobiti, te se vrijednost promjene označava znakom minus „-“. Ako se ne očekuje promjena u količini/vrijednosti/neto dobiti kao rezultat
           operacije, tj. ukoliko su količina/vrijednost/neto dobit u prethodnoj godini i reprezentativnoj godini jednake, vrijednost promjene je nula „0“.
@@ -991,8 +996,9 @@
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===20">
         <h2 style="text-align:center;">9.1. Količina proizvodnje (u kilogramima ili tonama)</h2>
-        <h3 class="spacing" style="text-align:center;">Odnosi se na godišnju količinu proizvodnje koja podrazumijeva godišnju količinu iskrcaja u slučaju inovacija 
-            u gospodarskom ribolovu odnosno godišnju prodanu količinu prerađenih proizvoda u slučaju inovacija u preradi vlastitih proizvoda
+        <h3 class="spacing" style="text-align:center;">
+          Odnosi se na godišnju količinu proizvodnje koja podrazumijeva godišnju količinu iskrcaja u slučaju inovacija
+          u gospodarskom ribolovu odnosno godišnju prodanu količinu prerađenih proizvoda u slučaju inovacija u preradi vlastitih proizvoda
         </h3>
 
         <v-container fluid grid-list-md>
@@ -1001,64 +1007,56 @@
               <v-text-field
                 v-model="reprezentativnaGodinaA"
                 label="A. Reprezentativna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="kolicinaA"
-                label="A. Količina:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="kolicinaA" label="A. Količina:" class="text_field"></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
               <v-select
-              v-model="mjernaJedinica"
-              :items="mjere"
-              :rules="[v => !!v || 'Polje je obavezno']"
-              label="Mjerna jedinica"
-              required
-              class="text_field"
-        ></v-select>
+                v-model="mjernaJedinica"
+                :items="mjere"
+                :rules="[v => !!v || 'Polje je obavezno']"
+                label="Mjerna jedinica"
+                required
+                class="text_field"
+              ></v-select>
             </v-flex>
             <v-flex xs12 sm4 md4>
               <v-text-field
                 v-model="reprezentativnaGodinaB"
                 label="B. Reprezentativna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="kolicinaB"
-                label="B. Količina:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="kolicinaB" label="B. Količina:" class="text_field"></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
               <v-select
-              v-model="mjernaJedinica"
-              :items="mjere"
-              :rules="[v => !!v || 'Polje je obavezno']"
-              label="Mjerna jedinica"
-              required
-              class="text_field"
-        ></v-select>
+                v-model="mjernaJedinica"
+                :items="mjere"
+                :rules="[v => !!v || 'Polje je obavezno']"
+                label="Mjerna jedinica"
+                required
+                class="text_field"
+              ></v-select>
             </v-flex>
-              <v-flex xs12 sm4 md4>
-                <v-text-field
-                  v-model="planiranaPromjenaAB"
-                  label="PLANIRANA PROMJENA (A-B):"
-                  class="text_field">
-                </v-text-field>
-              </v-flex>
-              <v-flex xs12 sm4 md4>
-                <v-select
-                  v-model="mjernaJedinica"
-                  :items="mjere"
-                  label="Mjerna jedinica"
-                  class="text_field">
-                </v-select>
+            <v-flex xs12 sm4 md4>
+              <v-text-field
+                v-model="planiranaPromjenaAB"
+                label="PLANIRANA PROMJENA (A-B):"
+                class="text_field"
+              ></v-text-field>
+            </v-flex>
+            <v-flex xs12 sm4 md4>
+              <v-select
+                v-model="mjernaJedinica"
+                :items="mjere"
+                label="Mjerna jedinica"
+                class="text_field"
+              ></v-select>
             </v-flex>
           </v-layout>
         </v-container>
@@ -1066,7 +1064,8 @@
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===21">
         <h2 style="text-align:center;">9.2. Vrijednost proizvodnje (u kunama)</h2>
-        <h3 class="spacing" style="text-align:center;">Odnosi se na godišnju vrijednost proizvodnje koja podrazumijeva ukupni
+        <h3 class="spacing" style="text-align:center;">
+          Odnosi se na godišnju vrijednost proizvodnje koja podrazumijeva ukupni
           godišnji prihod od prodaje proizvoda ribarstva na razini plovila/povlastice u slučaju gospodarskog ribolova odnosno ukupni
           godišnji prihod od prodaje prerađenih proizvoda u slučaju inovacija u preradi vlastitih proizvoda
         </h3>
@@ -1076,31 +1075,23 @@
               <v-text-field
                 v-model="reprezentativnaGodinaA"
                 label="A. Reprezentativna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
               <v-text-field
                 v-model="prethodnaGodinaB"
                 label="B. Prethodna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="vrijednostA"
-                label="A. Vrijednost:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="vrijednostA" label="A. Vrijednost:" class="text_field"></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="vrijednostB"
-                label="B. Vrijednost"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="vrijednostB" label="B. Vrijednost" class="text_field"></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
@@ -1108,16 +1099,17 @@
               <v-text-field
                 v-model="planiranaPromjenaAB"
                 label="PLANIRANA PROMJENA (A-B)"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
           </v-layout>
         </v-container>
       </v-form>
-      
+
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===22">
         <h2 style="text-align:center;">9.3. Neto dobit (u kunama)</h2>
-        <h3 class="spacing" style="text-align:center;">Odnosi se neto dobit (EBIT) koja podrazumijeva godišnju 
+        <h3 class="spacing" style="text-align:center;">
+          Odnosi se neto dobit (EBIT) koja podrazumijeva godišnju
           dobit od prihoda vezanih uz proizvode ribarstva prije umanjenja za kamate i porez na razini korisnika.
         </h3>
         <v-container fluid grid-list-md>
@@ -1126,31 +1118,23 @@
               <v-text-field
                 v-model="reprezentativnaGodinaA"
                 label="A. Reprezentativna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
               <v-text-field
                 v-model="prethodnaGodinaB"
                 label="B. Prethodna godina:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="vrijednostA"
-                label="A. Vrijednost:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="vrijednostA" label="A. Vrijednost:" class="text_field"></v-text-field>
             </v-flex>
             <v-flex xs12 sm4 md4>
-              <v-text-field
-                v-model="vrijednostB"
-                label="B. Vrijednost"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="vrijednostB" label="B. Vrijednost" class="text_field"></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
@@ -1158,8 +1142,8 @@
               <v-text-field
                 v-model="planiranaPromjenaAB"
                 label="PLANIRANA PROMJENA (A-B)"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
           </v-layout>
         </v-container>
@@ -1168,57 +1152,116 @@
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===23">
         <h1 style="text-align:center;">10. PODACI O PROVEDBI OPERACIJE</h1>
         <br>
-          <v-layout row wrap>
-            <v-flex xs12 sm6 md6>
-              <v-text-field
-                v-model="brojOsobaOperacije"
-                label="Broj osoba koje će imati izravne koristi od operacije">
-              </v-text-field>
-            </v-flex>
-          </v-layout>
-          <br>
+        <v-layout row wrap>
+          <v-flex xs12 sm6 md6>
+            <v-text-field
+              v-model="brojOsobaOperacije"
+              label="Broj osoba koje će imati izravne koristi od operacije"
+            ></v-text-field>
+          </v-flex>
+        </v-layout>
+        <br>
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===24">
         <h1 class="upper spacing" style="text-align:center;">11. izjava korisnika</h1>
-        <p style="text-align:center" class="bold">Ja dolje potpisani, pod materijalnom i kaznenom odgovornošću, izjavljujem:</p>
+        <p
+          style="text-align:center"
+          class="bold"
+        >Ja dolje potpisani, pod materijalnom i kaznenom odgovornošću, izjavljujem:</p>
         <hr>
         <ul class="spacing">
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da sam upoznat/a i suglasan/a sa sadržajem Pravilnika i Natječaja te s ostalim zakonskim/podzakonskim aktima i pratećim regulativama</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da su svi podaci u Zahtjevu i pratećoj dokumentaciji istiniti i točni, te da sam upoznat s posljedicama davanjem netočnih i krivih podataka</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da dopu&scaron;tam kori&scaron;tenje osobnih podataka (ime i prezime, OIB, e-mail adresa, kućna adresa i broj telefona, odnosno podaci koji inače nisu javno dostupni) i podataka iz službenih evidencija (naziv firme, obrta,zadruge, OIB, adresa,broj telefona i sl.) u skladu s propisima koji uređuju za&scaron;titu osobnih i drugih podataka</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da se slažem s načinom prikupljanja te dopu&scaron;tam obradu i kori&scaron;tenje podataka navedenih u Zahtjevu za potporu, a koji se upotrebljavaju za provedbu ovoga Natječaja</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da aktivnosti koje su predmet potpore nisu financirane nikakvim drugim javnim izdacima</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da sam upoznat sa činjenicom da se sredstva koja su nezakonito ostvarena moraju vratiti (zajedno sa zakonski propisanim zateznim kamatama)</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da nisam u sukobu interesa s izvođačima radova i/ili ponuditeljima/dobavljačima roba i/ili usluga koji su predmet ulaganja</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da nisam počinio te&scaron;ki prekr&scaron;aj na temelju članka 42. stavka 1. Uredbe Vijeća (EZ) br. 1005/2008 ili članka 90. stavka 1. Uredbe (EZ) br. 1224/2009 odnosno da mi, u odnosu na plovilo koje je predmet potpore, nije dodijeljeno devet ili vi&scaron;e kaznenih bodova za te&scaron;ke prekr&scaron;aje navedene u točkama 1., 2. i 5. Priloga XXX. Uredbe (EU) br. 404/2011.</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da plovilo/a kojemu/ima sam vlasnik i/ili ovla&scaron;tenik povlastice nije/nisu na Unijinom popisu nezakonitih, neprijavljenih i nereguliranih plovila kako je određeno u članku 40. stavku 3. Uredbe (EZ) br. 1005/2008.</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da plovilo/a kojemu/ima sam vlasnik i/ili ovla&scaron;tenik povlastice ne plovi/e pod zastavom zemlje s popisa nekooperativnih trećih zemalja iz članka 33. Uredbe (EZ) br. 1005/2008.</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da nisam počinio prijevaru u okviru Europskog fonda za ribarstvo ili Europskog fonda za pomorstvo i ribarstvo, a sukladno članku 1. Konvencije o za&scaron;titi financijskih interesa Zajednice.</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da ću djelovati u skladu s uvjetima iz članka 7. stavka 2. Pravilnika tijekom cijelog razdoblja provedbe operacije te tijekom pet godina nakon primljene konačne uplate sredstava</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da ću čuvati svu dokumentaciju koja se odnosi na dodjelu sredstava iz EFPR- a najmanje dvije (2) godine od 31. prosinca nakon predaje računa kojima su uključeni izvr&scaron;ni izdaci operacije</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da sam suglasan/a da budem uvr&scaron;ten u popis korisnika koji se objavljuje u skladu s člankom 119. stavkom 2. Uredbe (EU) br. 508/2014 Europskog parlamenta i Vijeća o Europskom fondu za pomorstvo i ribarstvo</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da ću omogućiti kontrolu na terenu i pristup dokumentaciji vezanoj za aktivnosti za koje je ostvarena potpora temeljem Pravilnika i Natječaja Upravljačkom tijelu, Tijelu za ovjeravanje, Tijelu za reviziju i tijela uključenih u revizije Operativnog programa iz članka 127. stavka 2. Uredbe (EU) 1303/2013 kao i ovla&scaron;tenim predstavnicima Europske komisije, Europskog revizorskog suda, Europskog ureda za borbu protiv prijevara (OLAF) i drugih nadležnih nadzornih/revizorskih tijela</span></li>
-          <li style="text-align: justify;"><span style="font-family: times new roman, times, serif; font-size: 12pt;">Da ću voditi ili odvojeni računovodstveni sustav ili primjereni računovodstveni kod/oznaku za sve transakcije vezane uz operaciju za koju mi je dodijeljena potpora</span></li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da sam upoznat/a i suglasan/a sa sadržajem Pravilnika i Natječaja te s ostalim zakonskim/podzakonskim aktima i pratećim regulativama</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da su svi podaci u Zahtjevu i pratećoj dokumentaciji istiniti i točni, te da sam upoznat s posljedicama davanjem netočnih i krivih podataka</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da dopu&scaron;tam kori&scaron;tenje osobnih podataka (ime i prezime, OIB, e-mail adresa, kućna adresa i broj telefona, odnosno podaci koji inače nisu javno dostupni) i podataka iz službenih evidencija (naziv firme, obrta,zadruge, OIB, adresa,broj telefona i sl.) u skladu s propisima koji uređuju za&scaron;titu osobnih i drugih podataka</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da se slažem s načinom prikupljanja te dopu&scaron;tam obradu i kori&scaron;tenje podataka navedenih u Zahtjevu za potporu, a koji se upotrebljavaju za provedbu ovoga Natječaja</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da aktivnosti koje su predmet potpore nisu financirane nikakvim drugim javnim izdacima</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da sam upoznat sa činjenicom da se sredstva koja su nezakonito ostvarena moraju vratiti (zajedno sa zakonski propisanim zateznim kamatama)</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da nisam u sukobu interesa s izvođačima radova i/ili ponuditeljima/dobavljačima roba i/ili usluga koji su predmet ulaganja</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da nisam počinio te&scaron;ki prekr&scaron;aj na temelju članka 42. stavka 1. Uredbe Vijeća (EZ) br. 1005/2008 ili članka 90. stavka 1. Uredbe (EZ) br. 1224/2009 odnosno da mi, u odnosu na plovilo koje je predmet potpore, nije dodijeljeno devet ili vi&scaron;e kaznenih bodova za te&scaron;ke prekr&scaron;aje navedene u točkama 1., 2. i 5. Priloga XXX. Uredbe (EU) br. 404/2011.</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da plovilo/a kojemu/ima sam vlasnik i/ili ovla&scaron;tenik povlastice nije/nisu na Unijinom popisu nezakonitih, neprijavljenih i nereguliranih plovila kako je određeno u članku 40. stavku 3. Uredbe (EZ) br. 1005/2008.</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da plovilo/a kojemu/ima sam vlasnik i/ili ovla&scaron;tenik povlastice ne plovi/e pod zastavom zemlje s popisa nekooperativnih trećih zemalja iz članka 33. Uredbe (EZ) br. 1005/2008.</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da nisam počinio prijevaru u okviru Europskog fonda za ribarstvo ili Europskog fonda za pomorstvo i ribarstvo, a sukladno članku 1. Konvencije o za&scaron;titi financijskih interesa Zajednice.</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da ću djelovati u skladu s uvjetima iz članka 7. stavka 2. Pravilnika tijekom cijelog razdoblja provedbe operacije te tijekom pet godina nakon primljene konačne uplate sredstava</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da ću čuvati svu dokumentaciju koja se odnosi na dodjelu sredstava iz EFPR- a najmanje dvije (2) godine od 31. prosinca nakon predaje računa kojima su uključeni izvr&scaron;ni izdaci operacije</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da sam suglasan/a da budem uvr&scaron;ten u popis korisnika koji se objavljuje u skladu s člankom 119. stavkom 2. Uredbe (EU) br. 508/2014 Europskog parlamenta i Vijeća o Europskom fondu za pomorstvo i ribarstvo</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da ću omogućiti kontrolu na terenu i pristup dokumentaciji vezanoj za aktivnosti za koje je ostvarena potpora temeljem Pravilnika i Natječaja Upravljačkom tijelu, Tijelu za ovjeravanje, Tijelu za reviziju i tijela uključenih u revizije Operativnog programa iz članka 127. stavka 2. Uredbe (EU) 1303/2013 kao i ovla&scaron;tenim predstavnicima Europske komisije, Europskog revizorskog suda, Europskog ureda za borbu protiv prijevara (OLAF) i drugih nadležnih nadzornih/revizorskih tijela</span>
+          </li>
+          <li style="text-align: justify;">
+            <span
+              style="font-family: times new roman, times, serif; font-size: 12pt;"
+            >Da ću voditi ili odvojeni računovodstveni sustav ili primjereni računovodstveni kod/oznaku za sve transakcije vezane uz operaciju za koju mi je dodijeljena potpora</span>
+          </li>
         </ul>
       </v-form>
 
       <v-form ref="form" v-model="valid" lazy-validation v-if="page===25">
-         <v-container fluid grid-list-md>
+        <v-container fluid grid-list-md>
           <v-layout row wrap>
             <v-flex xs12 sm2 md2>
-              <v-text-field
-                v-model="mjesto"
-                label="U:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="mjesto" label="U:" class="text_field"></v-text-field>
             </v-flex>
             <v-flex xs12 sm2 md2>
-              <v-text-field
-                v-model="godina"
-                label="Godine:"
-                class="text_field">
-              </v-text-field>
+              <v-text-field v-model="godina" label="Godine:" class="text_field"></v-text-field>
             </v-flex>
           </v-layout>
           <v-layout row wrap>
@@ -1226,11 +1269,22 @@
               <v-text-field
                 v-model="imePrezimeOdgovorneOsobe"
                 label="Ime i prezime odgovorne osobe:"
-                class="text_field">
-              </v-text-field>
+                class="text_field"
+              ></v-text-field>
             </v-flex>
           </v-layout>
-         </v-container>
+        </v-container>
+
+        <template>
+          <div id="app">
+            <vueSignature ref="signature" :sigOption="option" :w="'800px'" :h="'400px'"></vueSignature>
+            <vueSignature ref="signature1" :sigOption="option"></vueSignature>
+            <button @click="saveSig">Save</button>
+            <button @click="clear">Clear</button>
+            <button @click="undo">Undo</button>
+            <button @click="addWaterMark">addWaterMark</button>
+          </div>
+        </template>
       </v-form>
 
       <div class="text-md-center text-lg-center text-xs-center">
@@ -1268,156 +1322,183 @@ export default {
     page: 1,
     dialog: false,
     headers: [
-        { text: 'Rbr. (A)', value: 'rbr' },
-        {
-          text: 'Naziv i opis troška (B)',
-          align: 'left',
-          sortable: false,
-          value: 'nazivTroska'
-        },
-        { text: 'Naziv izvođača radova /dobavljača/ pružatelja usluge (C)', value: 'dobavljac' },
-        { text: 'Broj ponude /predračuna /računa (D)', value: 'brojDokumenta' },
-        { text: 'Iznos bez PDV-a (E)', value: 'iznos' },
-        { text: 'Iznos PDV-a (F)', value: 'pdv' },
-        { text: 'Ukupan iznos (F)', value: 'ukupno' }
-      ],
+      { text: "Rbr. (A)", value: "rbr" },
+      {
+        text: "Naziv i opis troška (B)",
+        align: "left",
+        sortable: false,
+        value: "nazivTroska"
+      },
+      {
+        text: "Naziv izvođača radova /dobavljača/ pružatelja usluge (C)",
+        value: "dobavljac"
+      },
+      { text: "Broj ponude /predračuna /računa (D)", value: "brojDokumenta" },
+      { text: "Iznos bez PDV-a (E)", value: "iznos" },
+      { text: "Iznos PDV-a (F)", value: "pdv" },
+      { text: "Ukupan iznos (F)", value: "ukupno" }
+    ],
     troskovi: [],
     editedIndex: -1,
     editedItem: {
       rbr: 0,
-      nazivTroska: '',
-      dobavljac: '',
-      brojDokumenta: '',
+      nazivTroska: "",
+      dobavljac: "",
+      brojDokumenta: "",
       iznos: 0,
-      pdv:0 ,
+      pdv: 0,
       ukupno: 0
     },
     defaultItem: {
       rbr: 0,
-      nazivTroska: '',
-      dobavljac: '',
-      brojDokumenta: '',
+      nazivTroska: "",
+      dobavljac: "",
+      brojDokumenta: "",
       iznos: 0,
-      pdv:0 ,
-      ukupno: 0},
+      pdv: 0,
+      ukupno: 0
+    },
     headersPlovilo: [
-        { text: 'Rbr. (A)', value: 'rbr' },
-        { text: 'Ime i prezime', value: 'imePrezime' },
-        { text: 'OIB', value: 'oib' }
-      ],
+      { text: "Rbr. (A)", value: "rbr" },
+      { text: "Ime i prezime", value: "imePrezime" },
+      { text: "OIB", value: "oib" }
+    ],
     plovilo: [],
     editedIndexPlovilo: -1,
     editedItemPlovilo: {
       rbr: 0,
-      imePrezime: '',
-      oib: ''
+      imePrezime: "",
+      oib: ""
     },
     defaultItemPlovilo: {
       rbr: 0,
-      imePrezime: '',
-      oib: ''
-    },
-  }),
-    computed: {
-      formTitle () {
-        return this.editedIndex === -1 ? 'Novi trošak' : 'Ažuriraj trošak';
-      },
-      formTitlePlovilo () {
-        return this.editedIndexPlovilo === -1 ? 'Novi suvlasnik' : 'Ažuriraj suvlasnika';
-      },
-      ukupnoSUM (){
-        let sum = 0;
-        this.troskovi.forEach(function(item) {
-          sum += (parseFloat(item.ukupno));
-        });
-
-        return this.formatMoney(sum);
-      },
-    },
-    watch: {
-      dialog (val) {
-        val || this.close()
+      imePrezime: "",
+      oib: "",
+      option: {
+        penColor: "rgb(0, 0, 0)",
+        backgroundColor: "rgb(255,255,255)"
       }
+    }
+  }),
+  computed: {
+    formTitle() {
+      return this.editedIndex === -1 ? "Novi trošak" : "Ažuriraj trošak";
+    },
+    formTitlePlovilo() {
+      return this.editedIndexPlovilo === -1
+        ? "Novi suvlasnik"
+        : "Ažuriraj suvlasnika";
+    },
+    ukupnoSUM() {
+      let sum = 0;
+      this.troskovi.forEach(function(item) {
+        sum += parseFloat(item.ukupno);
+      });
+
+      return this.formatMoney(sum);
+    }
+  },
+  watch: {
+    dialog(val) {
+      val || this.close();
+    }
+  },
+
+  created() {
+    this.initialize();
+  },
+
+  methods: {
+    initialize() {
+      this.troskovi = [];
+    },
+    formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
+      decimalCount = Math.abs(decimalCount);
+      decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+      const negativeSign = amount < 0 ? "-" : "";
+
+      let i = parseInt(
+        (amount = Math.abs(Number(amount) || 0).toFixed(decimalCount))
+      ).toString();
+      let j = i.length > 3 ? i.length % 3 : 0;
+
+      return (
+        negativeSign +
+        (j ? i.substr(0, j) + thousands : "") +
+        i.substr(j).replace(/(\d{3})(?=\d)/g, "1" + thousands) +
+        (decimalCount
+          ? decimal +
+            Math.abs(amount - i)
+              .toFixed(decimalCount)
+              .slice(2)
+          : "") +
+        " kn"
+      );
+    },
+    editItem(item) {
+      this.editedIndex = this.troskovi.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
     },
 
-    created () {
-      this.initialize()
+    deleteItem(item) {
+      const index = this.troskovi.indexOf(item);
+      confirm("Jeste li sigurni da želite obrisati stavku?") &&
+        this.troskovi.splice(index, 1);
     },
 
-    methods: {
-      initialize () {
-        this.troskovi = [
+    close() {
+      this.dialog = false;
+      setTimeout(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      }, 300);
+    },
 
-        ]
-      },
-      formatMoney(amount, decimalCount = 2, decimal = ",", thousands = ".") {
-        decimalCount = Math.abs(decimalCount);
-        decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+    save() {
+      this.editedItem.ukupno = (
+        Number(this.editedItem.iznos) + Number(this.editedItem.pdv)
+      ).toFixed(2);
+      if (this.editedIndex > -1) {
+        Object.assign(this.troskovi[this.editedIndex], this.editedItem);
+      } else {
+        this.troskovi.push(this.editedItem);
+      }
+      this.close();
+    },
 
-        const negativeSign = amount < 0 ? "-" : "";
+    editItemPlovilo(item) {
+      this.editedIndexPlovilo = this.plovilo.indexOf(item);
+      this.editedItemPlovilo = Object.assign({}, item);
+      this.dialog = true;
+    },
 
-        let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
-        let j = (i.length > 3) ? i.length % 3 : 0;
+    deleteItemPlovilo(item) {
+      const index = this.plovilo.indexOf(item);
+      confirm("Jeste li sigurni da želite obrisati stavku?") &&
+        this.plovilo.splice(index, 1);
+    },
 
-        return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "")+" kn";
-      },
-      editItem (item) {
-        this.editedIndex = this.troskovi.indexOf(item)
-        this.editedItem = Object.assign({}, item)
-        this.dialog = true
-      },
+    closePlovilo() {
+      this.dialog = false;
+      setTimeout(() => {
+        this.editedItemPlovilo = Object.assign({}, this.defaultItemPlovilo);
+        this.editedIndexPlovilo = -1;
+      }, 300);
+    },
 
-      deleteItem (item) {
-        const index = this.troskovi.indexOf(item)
-        confirm('Jeste li sigurni da želite obrisati stavku?') && this.troskovi.splice(index, 1)
-      },
-
-      close () {
-        this.dialog = false
-        setTimeout(() => {
-          this.editedItem = Object.assign({}, this.defaultItem)
-          this.editedIndex = -1
-        }, 300)
-      },
-
-      save () {
-        this.editedItem.ukupno=(Number(this.editedItem.iznos)+Number(this.editedItem.pdv)).toFixed(2);
-        if (this.editedIndex > -1) {
-          Object.assign(this.troskovi[this.editedIndex], this.editedItem)
-        } else {
-          this.troskovi.push(this.editedItem)
-        }
-        this.close()
-      },
-
-      editItemPlovilo (item) {
-        this.editedIndexPlovilo = this.plovilo.indexOf(item)
-        this.editedItemPlovilo = Object.assign({}, item)
-        this.dialog = true
-      },
-
-      deleteItemPlovilo (item) {
-        const index = this.plovilo.indexOf(item)
-        confirm('Jeste li sigurni da želite obrisati stavku?') && this.plovilo.splice(index, 1)
-      },
-
-      closePlovilo () {
-        this.dialog = false
-        setTimeout(() => {
-          this.editedItemPlovilo = Object.assign({}, this.defaultItemPlovilo)
-          this.editedIndexPlovilo = -1
-        }, 300)
-      },
-
-      savePlovilo () {
-        
-        if (this.editedIndexPlovilo > -1) {
-          Object.assign(this.plovilo[this.editedIndexPlovilo], this.editedItemPlovilo)
-        } else {
-          this.plovilo.push(this.editedItemPlovilo)
-        }
-        this.close()
-      },
+    savePlovilo() {
+      if (this.editedIndexPlovilo > -1) {
+        Object.assign(
+          this.plovilo[this.editedIndexPlovilo],
+          this.editedItemPlovilo
+        );
+      } else {
+        this.plovilo.push(this.editedItemPlovilo);
+      }
+      this.close();
+    },
 
     submit() {
       if (this.$refs.form.validate()) {
@@ -1426,28 +1507,61 @@ export default {
     },
     clear() {
       this.$refs.form.reset();
+    },
+
+    saveSig() {
+      var _this = this;
+      var png = _this.$refs.signature.save();
+      var jpeg = _this.$refs.signature.save("image/jpeg");
+      var svg = _this.$refs.signature.save("image/svg+xml");
+      console.log(png);
+      console.log(jpeg);
+      console.log(svg);
+    },
+    clear() {
+      var _this = this;
+      _this.$refs.signature.clear();
+    },
+    undo() {
+      var _this = this;
+      _this.$refs.signature.undo();
+    },
+    addWaterMark() {
+      var _this = this;
+      _this.$refs.signature.addWaterMark({
+        text: "mark text", // watermark text, > default ''
+        font: "20px Arial", // mark font, > default '20px sans-serif'
+        style: "all", // fillText and strokeText,  'all'/'stroke'/'fill', > default 'fill
+        fillStyle: "red", // fillcolor, > default '#333'
+        strokeStyle: "blue", // strokecolor, > default '#333'
+        x: 100, // fill positionX, > default 20
+        y: 200, // fill positionY, > default 20
+        sx: 100, // stroke positionX, > default 40
+        sy: 200 // stroke positionY, > default 40
+      });
+    },
+    fromDataURL(url) {
+      var _this = this;
+      _this.$refs.signature.fromDataURL("data:image/png;base64,iVBORw0K...");
     }
   }
 };
-
 </script>
 
 <style>
-
-.inputPrice input[type='number'] {
-    -moz-appearance:textfield;
+.inputPrice input[type="number"] {
+  -moz-appearance: textfield;
 }
 .inputPrice input::-webkit-outer-spin-button,
 .inputPrice input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
-
 
 :root {
   --primary-color: #0868ac !important;
   --secondary-color: #fff !important;
-  --third-color: rgba(0,0,0,0.87)!important;
-  --message-color: #FF4136 !important;
+  --third-color: rgba(0, 0, 0, 0.87) !important;
+  --message-color: #ff4136 !important;
   --input-text-color: #3e4444 !important;
 }
 
@@ -1473,22 +1587,23 @@ h1,
   color: var(--message-color) !important;
 }
 
-.theme--light.v-input:not(.v-input--is-disabled) input, .theme--light.v-input:not(.v-input--is-disabled) textarea {
-   color: var(--input-text-color) !important;
+.theme--light.v-input:not(.v-input--is-disabled) input,
+.theme--light.v-input:not(.v-input--is-disabled) textarea {
+  color: var(--input-text-color) !important;
 }
 
- i.v-icon.mr-2.v-icon--link.material-icons.theme--light {
-   color: var(--primary-color) !important;
- }
+i.v-icon.mr-2.v-icon--link.material-icons.theme--light {
+  color: var(--primary-color) !important;
+}
 
- i.v-icon.v-icon--link.material-icons.theme--light {
-   color: #3D9970;
-   opacity: 0.7;
- }
+i.v-icon.v-icon--link.material-icons.theme--light {
+  color: #3d9970;
+  opacity: 0.7;
+}
 
-  i.v-icon.v-icon--link.material-icons.theme--light:hover {
-    opacity: 1;
-  }
+i.v-icon.v-icon--link.material-icons.theme--light:hover {
+  opacity: 1;
+}
 
 /*----- custom ------------- */
 
@@ -1502,9 +1617,9 @@ h1,
 }
 
 hr {
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
 
 .v-input--selection-controls {
@@ -1592,11 +1707,11 @@ h4.checkbox-text {
 .theme--light.v-pagination .v-pagination__item--active,
 .theme--dark.v-btn:not(.v-btn--icon):not(.v-btn--flat) {
   background: var(--primary-color) !important;
-   color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-.v-toolbar__content { 
-    margin-top: 50px !important;
+.v-toolbar__content {
+  margin-top: 50px !important;
 }
 
 .v-input.text_field.v-text-field.v-input--is-label-active.v-input--is-dirty.v-input--is-readonly.theme--light {
@@ -1661,26 +1776,26 @@ table.v-table thead th:nth-child(7) {
   width: 99px !important;
 }
 
-table.v-table thead td:not(:nth-child(1)), 
-table.v-table tbody td:not(:nth-child(1)), 
-table.v-table thead th:not(:nth-child(1)), 
-table.v-table tbody th:not(:nth-child(1)), 
-table.v-table thead td:first-child, 
-table.v-table tbody td:first-child, 
+table.v-table thead td:not(:nth-child(1)),
+table.v-table tbody td:not(:nth-child(1)),
+table.v-table thead th:not(:nth-child(1)),
+table.v-table tbody th:not(:nth-child(1)),
+table.v-table thead td:first-child,
+table.v-table tbody td:first-child,
 table.v-table thead th:first-child,
- table.v-table tbody th:first-child {
-   padding: 0 14px;
- }
+table.v-table tbody th:first-child {
+  padding: 0 14px;
+}
 
- th.column.sortable.text-xs-left {
-   padding-bottom: 5px;
- }
- 
- .text-center {
-   text-align: center;
-   display:block;
-   margin: 0 auto;
- }
+th.column.sortable.text-xs-left {
+  padding-bottom: 5px;
+}
+
+.text-center {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
 
 /* responsive */
 
@@ -1724,38 +1839,35 @@ table.v-table thead th:first-child,
 
   .reset-btn {
     position: absolute;
-    bottom: 0
+    bottom: 0;
   }
 
   table.v-table thead th:nth-child(1) {
-  white-space: normal !important;
-}
+    white-space: normal !important;
+  }
 
   th.column.sortable.text-xs-left {
-   padding-bottom: 0;
- }
+    padding-bottom: 0;
+  }
 
- .text-center {
-   display: inline;
- }
+  .text-center {
+    display: inline;
+  }
 
- td.text-xs-left {
+  td.text-xs-left {
     word-wrap: break-word;
-}
+  }
 
- h4.checkbox-text {
-   font-weight: normal;
- }
-
+  h4.checkbox-text {
+    font-weight: normal;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
- table.v-table thead th:nth-child(5),
- table.v-table thead th:nth-child(6),
- table.v-table thead th:nth-child(7) {
-  min-width: 115px !important;
+  table.v-table thead th:nth-child(5),
+  table.v-table thead th:nth-child(6),
+  table.v-table thead th:nth-child(7) {
+    min-width: 115px !important;
+  }
 }
-}
-
-
 </style>
