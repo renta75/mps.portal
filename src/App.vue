@@ -1203,8 +1203,38 @@
         </ul>
       </v-form>
 
+      <v-form ref="form" v-model="valid" lazy-validation v-if="page===25">
+         <v-container fluid grid-list-md>
+          <v-layout row wrap>
+            <v-flex xs12 sm2 md2>
+              <v-text-field
+                v-model="mjesto"
+                label="U:"
+                class="text_field">
+              </v-text-field>
+            </v-flex>
+            <v-flex xs12 sm2 md2>
+              <v-text-field
+                v-model="godina"
+                label="Godine:"
+                class="text_field">
+              </v-text-field>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs12 sm4 md4>
+              <v-text-field
+                v-model="imePrezimeOdgovorneOsobe"
+                label="Ime i prezime odgovorne osobe:"
+                class="text_field">
+              </v-text-field>
+            </v-flex>
+          </v-layout>
+         </v-container>
+      </v-form>
+
       <div class="text-md-center text-lg-center text-xs-center">
-        <v-pagination v-model="page" :length="24" :total-visible="5" class="pagi"></v-pagination>
+        <v-pagination v-model="page" :length="25" :total-visible="5" class="pagi"></v-pagination>
       </div>
     </v-card>
   </v-container>
